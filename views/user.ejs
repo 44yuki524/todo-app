@@ -1,0 +1,31 @@
+<%- include('./header') %>
+
+    <script>
+        function del(id){
+            var result = window.confirm('id=' + id + ' のTODOを削除しますか。 ' );
+            if(result){
+                window.location = '/del_todo?id=' + id;
+            }
+        }
+    </script>
+    <p class="h5 mt-4">ToDo List</p>
+    <table class="table mt-4">
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Fnished</th>
+            <th>Complated?</th>
+            <th>Delete</th>
+        </tr>
+        <% for(let i in data){ %>
+            <tr>
+                <td><%=data[i].id %></td>
+                <td><%=data[i].title %></td>
+                <td><%=data[i]["datetime(finished,'+9 hours')"] %></td>
+                <td><%=data[i].checked ? 'YES' : '' %></td>
+                <td><a href="javascript:del(<%=data[i].id %>);">DEL</a></td>
+            </tr>
+        <% } %>
+    </table>
+
+<%- include('./footer') %>

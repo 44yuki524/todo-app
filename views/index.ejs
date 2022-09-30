@@ -1,0 +1,25 @@
+<%- include('./header') %>
+
+<p class="h5 mt-4">Nearly ToDo</p>
+<ol class="list-group">
+  <% for(let i in data) {%>
+    <li class="list-group-item list-group-item-action">
+      <a href="/view?id=<%= data[i].id %>" class="text-dark">
+        <%= data[i]["datetime(finished,'+9 hours')"] + ' ' + data[i].title %>
+      </a>
+    </li>
+  <% } %>
+</ol>
+
+<p class="h5 mt-4" mt-4>Passed ToDo</p>
+<ol class="list-group">
+  <% for(let i in data2) {%>
+    <li class="list-group-item list-group-item-action">
+      <a href="/view?id=<%= data2[i].id %>" class="text-dark">
+        <%= data2[i]["datetime(finished,'+9 hours')"] + ' ' + data2[i].title %>
+      </a>
+    </li>
+  <% } %>
+</ol>
+
+<%- include('./footer') %>

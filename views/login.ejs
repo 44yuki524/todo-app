@@ -1,0 +1,21 @@
+<%- include('./header') %>
+
+<form action="/users/login" method="post">
+    <div class="form-group mb-3">
+        <label for="name">Account</label>
+        <input type="text" id="account" name="account" class="form-control">
+    </div>
+    <div class="form-group mb-3">
+        <label for="mail">Password</label>
+        <input type="password" id="password" name="password" class="form-control">
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="click!">
+    </div>
+</form>
+
+<h5 class="mt-5 mb-2">Sorry, the registration system is not implemented. </h5>
+<h5 class="mb-4">If you would like to use the ToDo app, please contact us by email from our portfolio or blog.</h5>
+
+
+<%- include('./footer') %>

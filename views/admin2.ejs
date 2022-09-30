@@ -1,0 +1,22 @@
+<%- include('./header') %>
+<script>
+    function del(id){
+        var result = window.confirm('id=' + id + ' のユーザーを削除しますか。');
+        if (result) {
+            window.location = '/users/del_usr?id=' + id;
+        }
+    }
+
+</script>
+<p class="h5 mt-4">Registar user.</p>
+<ul class="list-group">
+    <% for(let i in data){ %>
+        <li class="list-group-item list-group-item-action">
+            <%= data[i].id + ': ' + data[i].account %><strong>
+            <a href="javascript:del(<%= data[i].id %>)">[delete]</a>
+            </strong>
+        </li>
+    <% } %>
+</ul>
+
+<%- include('./footer') %>
